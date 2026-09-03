@@ -1,0 +1,67 @@
+{
+  "name": "@quantaseal/sdk",
+  "version": "0.1.0",
+  "description": "QuantaSeal Node.js SDK - quantum-safe encryption, digital signatures, and credential vault management",
+  "keywords": [
+    "quantaseal",
+    "quantum-safe",
+    "encryption",
+    "post-quantum",
+    "cryptography",
+    "ML-KEM",
+    "ML-DSA",
+    "vault",
+    "security",
+    "pqc"
+  ],
+  "homepage": "https://quantaseal.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quantaseal/quantaseal.git",
+    "directory": "sdk/node"
+  },
+  "license": "MIT",
+  "author": "QuantaSeal <sdk@quantaseal.io>",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "msw": "^2.7.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
